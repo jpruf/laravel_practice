@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::group(['prefix'=>'do'], function ($name = null) {
+Route::group(['prefix'=>'do'], function () {
     Route::get('/{action}/{name?}', [
         'uses'=>"NiceController@getNiceAction",
-        'as'=>"niceaction"
+        'as'=>'niceaction'
         ]);
 
     Route::post('/', [

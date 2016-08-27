@@ -1,10 +1,10 @@
-@extends('layouts.master')
+@extends('layouts/master')
 
 @section('content')
     <div class="centered">
         <a href="{{route('niceaction', ['action'=>'greet'])}}">Greet</a>
-        <a href="{{route('niceaction', ['action'=>'greet'])}}">Handshake</a>
-        <a href="{route('niceaction', ['action'=>'greet'])}}">Hug</a>
+        <a href="{{route('niceaction', ['action'=>'handshake'])}}">Handshake</a>
+        <a href="{{route('niceaction', ['action'=>'hug'])}}">Hug</a>
         <br>
         <form method="post" action="{{route('be_nice')}}">
             <label for="select-action">I want to..</label>

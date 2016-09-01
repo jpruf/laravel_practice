@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::group(['prefix'=>'do'], function () {
-    Route::get('/{action}/{name?}', [
-        'uses'=>"NiceController@getNiceAction",
-        'as'=>'niceaction'
-        ]);
-
+Route::group(['prefix' => 'dir1'], function(){
+    Route::get('/{fruit}/{name?}', [
+        'uses' => 'FruitController@getFruit',
+        'as' => 'fruitgetpg']
+    );
+    
     Route::post('/', [
-        'uses'=>"NiceController@postNiceAction",
-        'as'=>'be_nice'
-    ]);
+        'uses' => 'FruitController@postFruit',
+        'as' => 'fruitpostpg']
+    );
 });
